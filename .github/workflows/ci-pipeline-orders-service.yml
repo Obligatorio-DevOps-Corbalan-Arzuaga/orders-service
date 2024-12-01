@@ -17,9 +17,6 @@ jobs:
     name: Build, Test, and Deploy
     runs-on: ubuntu-latest
 
-    env:
-      ECR_REPOSITORY: products-service 
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
