@@ -6,11 +6,6 @@ on:
       - develop
       - staging
       - main
-  pull_request:
-    branches:
-      - develop
-      - staging
-      - main
 
 jobs:
   build-test-deploy:
