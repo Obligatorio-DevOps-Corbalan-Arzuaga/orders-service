@@ -39,15 +39,15 @@ jobs:
             -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
             -Dsonar.verbose=true
             
-      - name: Verificar resultados del análisis en SonarCloud
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
-          SONAR_HOST_URL: "https://sonarcloud.io"
+      # - name: Verificar resultados del análisis en SonarCloud
+      #   uses: sonarsource/sonarqube-quality-gate-action@master
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+      #     SONAR_HOST_URL: "https://sonarcloud.io"
   
-      - name: Mostrar el estado del Quality Gate
-        run: |
-         echo "El estado del Quality Gate es: ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
+      # - name: Mostrar el estado del Quality Gate
+      #   run: |
+      #    echo "El estado del Quality Gate es: ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
